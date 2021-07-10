@@ -15,6 +15,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+app.post("/login", (req, res) => {
+  const loginDetail = req.body;
+  console.log(req.body);
+});
+
 app.listen(PORT, () => {
   console.log(`App is running on port ${PORT}`);
 });
