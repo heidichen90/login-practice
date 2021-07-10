@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const exhbs = require("express-handlebars");
+require("./config/mongoose");
 
 const PORT = 3000;
 
