@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const exhbs = require("express-handlebars");
+const Login = require("./models/login");
 require("./config/mongoose");
 
 const PORT = 3000;
@@ -18,7 +19,25 @@ app.get("/", (req, res) => {
 
 app.post("/login", (req, res) => {
   const loginDetail = req.body;
-  console.log(req.body);
+  Login.find({ email: loginDetail.email })
+    .lean()
+    .then((result) => {
+      const user = result[0];
+      var error = "";
+      if (result.length === 0) {
+        error = "Unable to find user name";
+        res.render("index", { error });
+      }
+      if (loginDetail.password === user.password) {
+        res.render("welcome", { userName: user.firstName });
+      } else {
+        error = "wrong password, please try it again";
+        res.render("index", { user, error });
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 });
 
 app.listen(PORT, () => {
