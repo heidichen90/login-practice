@@ -9,6 +9,7 @@ Login Practice to go through authentication logic on application
 - pre-canned list of username and password
 - when user enter email/password check if user exist
 - if unable to find detial, redirect back to previous page and show correspond error message
+- Once login success, it will store in cookie session for 24hrs
 
 ## Getting Started
 
@@ -43,6 +44,7 @@ Load up seed data
 - [Node.js](https://nodejs.org/en/) (v10.15.0)
 - [Express](https://expressjs.com/) (v4.17.1)
 - [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) (v5.3.2)
+- [cookie-parser](https://www.npmjs.com/package/cookie-parser) (1.4.5)
 - [Bootstrap](https://getbootstrap.com/) (v4.3.1)
 - [Mongoose ODM](https://mongoosejs.com/) (v5.12.13)
 - [Mongodb](https://www.mongodb.com/) (v4.2.14)
