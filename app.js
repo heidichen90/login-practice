@@ -10,6 +10,8 @@ const PORT = 3000;
 //set up  handlebars as a view engine
 app.engine("hbs", exhbs({ defaultLayout: "main", extname: ".hbs" }));
 app.set("view engine", "hbs");
+
+//set up cookie parser
 app.use(cookieParser());
 
 //set up body parser
